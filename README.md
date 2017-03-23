@@ -20,4 +20,4 @@ Note: This is purely an example, and probably not suitable for production.  It p
     
     3. Ensure port 4243 is open on the firewall to Qlik Sense
 
-![ScreenShot](https://raw.github.com/clint.carr/qlik-sense-ticket-python/master/get_ticket.png)
+![ScreenShot](https://github.com/clintcarr/qlik-sense-ticket-python/blob/master/get_ticket.png)

@@ -5,7 +5,8 @@ Example of how to request a ticket from Qlik Sense Proxy Service API using Pytho
 
 ## Requirements
 
-    Python 3 - Download
+    Python 3
+    Requests module imported
     Certificates exported from Qlik Sense in PEM format (stored on local drive)
 
 ### Introduction

@@ -14,7 +14,9 @@ Note: This is purely an example, and probably not suitable for production.  It p
 
 ### Configure Qlik Sense
 
-    Configure a virtual proxy for ticketing to use with this code. Virtual proxy configuration examples may be found on QlikCommunity. 
-    Export the Qlik Sense certificates in PEM format and store them locally.
-    Ensure port 4243 is open on the firewall to Qlik Sense
+    1. Configure a virtual proxy for ticketing to use with this code. Virtual proxy configuration examples may be found on QlikCommunity.
+    
+    2. Export the Qlik Sense certificates in PEM format and store them locally.
+    
+    3. Ensure port 4243 is open on the firewall to Qlik Sense
 

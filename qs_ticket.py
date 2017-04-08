@@ -2,6 +2,7 @@ import requests
 import string
 import json
 import random
+import webbrowser
 
 requests.packages.urllib3.disable_warnings()
 
@@ -36,16 +37,20 @@ class ConnectQlik:
             ,data=json_payload, headers=headers, verify=self.root, cert=self.certificate)
         return response.json().get('Ticket')
 
+    def create_url(self):
+        ticket = self.get_ticket()
+        url = 'https://{0}/ticket/hub/?qlikTicket={1}'.format (self.server, ticket)
+        return url
+
 if __name__ == '__main__':
 
     qlik = ConnectQlik(server='qs2.qliklocal.net',
-        virtualproxy='ticketing',
+        virtualproxy='ticket',
         certificate=('C:/certs/qs2.qliklocal.net/client.pem', 'c:/certs/qs2.qliklocal.net/client_key.pem'), 
         root='C:/certs/qs2.qliklocal.net/root.pem',
-        userdirectory='qliklocal',
-        userid='administrator')
+        userdirectory='FooBar',
+        userid='NewUserHello')
 
     print(qlik.get_ticket())
 
-
-
+    webbrowser.get('C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s').open(qlik.create_url())

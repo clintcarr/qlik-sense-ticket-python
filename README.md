@@ -23,4 +23,4 @@ The code will now launch Qlik Sense in Chrome with the ticket as a basic test of
     
     3. Ensure port 4243 is open on the firewall to Qlik Sense
 
-![ScreenShot](https://github.com/clintcarr/qlik-sense-ticket-python/blob/master/get_ticket.png)
+![ScreenShot](https://github.com/clintcarr/qlik-sense-ticket-python/blob/master/ticket.gif)

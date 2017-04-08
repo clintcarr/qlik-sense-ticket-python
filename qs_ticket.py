@@ -22,7 +22,7 @@ requests.packages.urllib3.disable_warnings()
 
 def set_xrf():
     """
-    Function to create XRF key used to prevent cross site request forgery
+    Create XRF key used to prevent cross site request forgery
     """
     characters = string.ascii_letters + string.digits
     return ''.join(random.sample(characters, 16))

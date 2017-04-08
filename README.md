@@ -13,6 +13,8 @@ Example of how to request a ticket from Qlik Sense Proxy Service API using Pytho
 
 Note: This is purely an example, and probably not suitable for production.  It provides a process to create a ticket in Python.  This code is not supported by Qlik in anyway.
 
+The code will now launch Qlik Sense in Chrome with the ticket as a basic test of functionality.
+
 ### Configure Qlik Sense
 
     1. Configure a virtual proxy for ticketing to use with this code. Virtual proxy configuration examples may be found on QlikCommunity.

@@ -39,13 +39,16 @@ class ConnectQlik:
 
     def create_url(self):
         ticket = self.get_ticket()
-        url = 'https://{0}/ticket/hub/?qlikTicket={1}'.format (self.server, ticket)
+        if self.virtualproxy is not None:
+            url = 'https://{0}/{1}/hub/?qlikTicket={2}'.format (self.server, self.virtualproxy, ticket)
+        else:
+            url = 'https://{0}/hub/?qlikTicket={1}'.format (self.server, ticket)
         return url
 
 if __name__ == '__main__':
 
     qlik = ConnectQlik(server='qs2.qliklocal.net',
-        virtualproxy='ticket',
+        # virtualproxy='ticket',
         certificate=('C:/certs/qs2.qliklocal.net/client.pem', 'c:/certs/qs2.qliklocal.net/client_key.pem'), 
         root='C:/certs/qs2.qliklocal.net/root.pem',
         userdirectory='FooBar',

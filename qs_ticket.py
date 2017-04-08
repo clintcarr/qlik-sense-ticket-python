@@ -52,12 +52,13 @@ def create_url():
     """
     Construct the URL with the Qlik Sense Ticket
     """
-    ticket = get_ticket()
     if args.virtualproxy is not None:
-        url = 'https://{0}/{1}/hub/?qlikTicket={2}'.format(args.server, args.virtualproxy, ticket)
+        url = 'https://{0}/{1}/hub/?qlikTicket={2}'.format(args.server, args.virtualproxy, get_ticket())
     else:
-        url = 'https://{0}/hub/?qlikTicket={1}'.format(args.server, ticket)
+        url = 'https://{0}/hub/?qlikTicket={1}'.format(args.server, get_ticket())
     return url
 
 if __name__ == '__main__':
     webbrowser.get('C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s').open(create_url())
+
+    

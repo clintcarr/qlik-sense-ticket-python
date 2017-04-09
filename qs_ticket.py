@@ -44,21 +44,17 @@ def get_ticket():
     url = 'https://{0}:4243/qps/ticket?Xrfkey={1}'.format(args.server, xrf)
     if args.virtualproxy is not None:
         url = 'https://{0}:4243/qps/{1}/ticket?Xrfkey={2}'.format(args.server, args.virtualproxy, xrf)
-    response = requests.post(url
-        ,data=json_payload, headers=headers, verify=root, cert=certificate)
+    response = requests.post(url, data=json_payload, headers=headers, verify=root, cert=certificate)
     return response.json().get('Ticket')
 
 def create_url():
     """
     Construct the URL with the Qlik Sense Ticket
     """
+    url = 'https://{0}/hub/?qlikTicket={1}'.format(args.server, get_ticket())
     if args.virtualproxy is not None:
         url = 'https://{0}/{1}/hub/?qlikTicket={2}'.format(args.server, args.virtualproxy, get_ticket())
-    else:
-        url = 'https://{0}/hub/?qlikTicket={1}'.format(args.server, get_ticket())
     return url
 
 if __name__ == '__main__':
     webbrowser.get('C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s').open(create_url())
-
-    
